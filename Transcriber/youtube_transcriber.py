@@ -18,6 +18,6 @@ class YoutubeTranscriber:
 
     def get_transcript(self,video_id : str) -> str:
         ytt_api = YouTubeTranscriptApi()
-        transcript_list = ytt_api.fetch(video_id)
+        transcript_list = ytt_api.fetch(video_id, languages=['hi','en','en-US'])
         transcript = " ".join(snippet.text for snippet in transcript_list)
         return transcript
